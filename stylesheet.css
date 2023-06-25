@@ -1,0 +1,150 @@
+* {
+    margin: 0em, auto;
+    padding: 0em;
+    background-color: rgb(250, 253, 253);
+}
+
+header {
+    margin-left: 25em;
+    background-color: red;
+    color: white;
+    width: fit-content;
+}
+
+#body2 {
+    margin-left: 20em;
+    margin-right: 20em;
+    margin-top: 4em;
+    background-color: rgb(69, 107, 119);
+}
+
+#nav-items {
+    /*background-color: aquamarine;*/
+    display: flex;
+    list-style-type: none;
+    position: relative;
+    top: -2.5em;
+}
+
+#about-me {
+    position: relative;
+    left: 1em;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+#contact-me {
+    position: relative;
+    left: 35em;
+}
+
+#socials {
+    /*background-color: pink;*/
+    display: flex;
+    height: fit-content;
+    position: relative;
+    top: -1.5em;
+    justify-content: center;
+
+}
+
+#linkedin-icon {
+    width: 34px;
+    margin-right: 10px;
+}
+
+#github-icon {
+    width: 20px;
+    position: relative;
+    bottom: -0.46em;
+}
+
+#cute-divider-graphic1 {
+    /* background-color: purple;*/
+    display: flex;
+}
+
+#welcomegif-img {
+    width: 700px;
+}
+
+#main-content {
+    background-color: rgb(69, 107, 119);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+#img-section {
+    display: block;
+    justify-content: center;
+}
+
+#welcome-img {
+    max-width: 500px;
+    margin-top: 3em;
+    margin-left: 4.7em;
+}
+
+#content-1 {
+    display: block;
+    margin-top: 40px;
+}
+
+#cont-1 {
+    display: block;
+}
+
+#cont-2 {
+    display: block;
+    margin-top: 2em;
+}
+
+#projects {
+    background-color: darkcyan;
+    cursor: grab;
+}
+
+#projects:hover {
+    color: white;
+}
+
+#comments1 {
+    display: flex;
+    margin-top: 40px;
+    /*background-color: aqua;*/
+    position: relative;
+    right: -8.6em;
+    width: fit-content;
+    padding-top: 2%;
+    padding-bottom: 1%;
+}
+
+#comments {
+    margin-top: 20px;
+}
+
+#comments .comment {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+
+#cute-divider-graphic2 {
+    /* background-color: purple;*/
+    position: relative;
+    bottom: -5em;
+    right: -7.2em;
+}
+
+#footer-content {
+    /* background-color: yellow;*/
+    position: relative;
+    bottom: -10em;
+}
