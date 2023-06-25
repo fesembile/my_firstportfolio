@@ -1,0 +1,210 @@
+!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body>
+    <header>
+        Warning! This page is still under construction and is not responsive as of yet!
+    </header>
+    <div id="body2">
+
+        <div id="nav-items">
+
+            <div id="about-me">
+                <li><a href="index.html">about me</a> </li>
+            </div>
+
+
+            <div id="contact-me">
+                <li><a href="contact me page.html"> contact me </a> </li>
+            </div>
+
+
+        </div>
+
+        <div id="socials">
+
+            <div id="linked-in">
+                <a href="https://www.linkedin.com/in/fesembile/"><img
+                        src="https://static.vecteezy.com/system/resources/previews/018/930/587/original/linkedin-logo-linkedin-icon-transparent-free-png.png"
+                        id="linkedin-icon"></a>
+            </div>
+
+            <div id="github-1">
+                <a href="https://github.com/fesembile"><img
+                        src="https://www.freeiconspng.com/thumbs/github-icon/github-icon-4.jpg" id="github-icon"> </a>
+            </div>
+        </div>
+
+        <div id="cute-divider-graphic1">
+            <img src="https://clipart-library.com/images/qTBXr9Mzc.gif" alt="welcome-div-gif" id="welcomegif-img">
+        </div>
+
+        <div id="main-content">
+            <div id="img-section">
+                <img src="portfolio img.png" alt="welcome-image" id="welcome-img">
+            </div>
+
+            <div id="content-1">
+                <div id="cont-1">
+
+                    <P> Welcome to my portfolio! </p>
+
+                    <p> I am delighted to share my journey as a software engineering student at the African
+                        Leadership University. With a passion for technology and a drive for innovation, I have immersed
+                        myself in the world of software development, constantly pushing boundaries and exploring new
+                        horizons. </p>
+
+                    <p> As a virtual assistant, I have honed my skills in effectively managing tasks and providing
+                        seamless support to individuals and businesses. Whether it's organizing schedules, handling
+                        administrative duties, or ensuring efficient communication, I take pride in my ability to
+                        streamline processes and alleviate workload burdens.</p>
+
+                    <p>Beyond my role as a virtual assistant, I am an aspiring writer who seeks to captivate audiences
+                        with compelling stories and thought-provoking narratives. Through my writing, I aim to inspire,
+                        educate, and entertain, crafting experiences that resonate with readers on a profound level.</p>
+
+                    <p> In addition to my software engineering and virtual assistant roles, I possess a diverse range of
+                        talents. From modding and programming to 3D sculpting, I embrace the creative aspects of
+                        technology, blending technical expertise with artistic expression. This multidisciplinary
+                        approach allows me to bring unique perspectives and innovative solutions to any project. </p>
+
+                </div>
+
+                <div id="cont-2">
+                    <p>As a second-year student, I am constantly seeking opportunities to learn, grow, and apply my
+                        skills in real-world scenarios. I thrive in dynamic environments, adapting quickly to changing
+                        requirements and collaborating effectively with diverse teams.</p>
+
+                    <p>My portfolio serves as a testament to my dedication, proactiveness, and organizational skills. It
+                        showcases the projects I have undertaken, highlighting my ability to deliver exceptional results
+                        and exceed expectations.</p>
+
+                    <p>Thank you for taking the time to explore my portfolio. I invite you to <a
+                            href="https://github.com/fesembile" id="projects">delve
+                            deeper</a> into my work
+                        and discover the passion and commitment that drive me as a software engineering student, virtual
+                        assistant, and aspiring writer. Together, let's embark on a journey of innovation and
+                        creativity.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="comments1">
+            <h2>Add a Comment</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" required><br><br>
+
+                <label for="comment">Comment:</label>
+                <textarea id="comment" required></textarea><br><br>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div id="display"></div>
+
+
+        <div id="comments">
+            <h2>Comments</h2>
+        </div>
+
+        <div id="cute-divider-graphic2">
+            <img src="https://64.media.tumblr.com/tumblr_m509yptN9E1qb1380.gif" id="divv2">
+            <img src="https://64.media.tumblr.com/tumblr_m509yptN9E1qb1380.gif" id="divv3">
+
+        </div>
+
+        <footer>
+            <div id="footer-content">
+                Copyright &#169;Fese Mbile
+            </div>
+        </footer>
+
+
+        <script>
+            // Load comments from local storage on page load
+            document.addEventListener("DOMContentLoaded", function () {
+                loadComments();
+            });
+
+            // Save comment to local storage
+            document.querySelector("#comment-form").addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                var nameInput = document.querySelector("#name");
+                var commentInput = document.querySelector("#comment");
+
+                var name = nameInput.value;
+                var comment = commentInput.value;
+
+                if (name.trim() === '' || comment.trim() === '') {
+                    alert("Please fill in all fields.");
+                    return;
+                }
+
+                saveComment(name, comment);
+                addCommentToPage(name, comment);
+
+                nameInput.value = '';
+                commentInput.value = '';
+            });
+
+            // Save comment to local storage
+            function saveComment(name, comment) {
+                var comments = getCommentsFromStorage();
+                comments.push({ name: name, comment: comment });
+                localStorage.setItem("comments", JSON.stringify(comments));
+            }
+
+            // Load comments from local storage
+            function loadComments() {
+                var comments = getCommentsFromStorage();
+
+                for (var i = 0; i < comments.length; i++) {
+                    var comment = comments[i];
+                    addCommentToPage(comment.name, comment.comment);
+                }
+            }
+
+            // Get comments from local storage
+            function getCommentsFromStorage() {
+                var comments = localStorage.getItem("comments");
+
+                if (comments) {
+                    return JSON.parse(comments);
+                }
+
+                return [];
+            }
+
+            // Add comment to the page
+            function addCommentToPage(name, comment) {
+                var commentsDiv = document.querySelector("#comments");
+                var commentDiv = document.createElement("div");
+                commentDiv.classList.add("comment");
+
+                var nameElement = document.createElement("h3");
+                nameElement.textContent = name;
+
+                var commentElement = document.createElement("p");
+                commentElement.textContent = comment;
+
+                commentDiv.appendChild(nameElement);
+                commentDiv.appendChild(commentElement);
+
+                commentsDiv.appendChild(commentDiv);
+            }
+        </script>
+
+</body>
+
+</html>
